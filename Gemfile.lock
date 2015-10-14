@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.8.1)
+    minitest-colorize (0.0.5)
+      minitest (>= 2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest
+  minitest-colorize
+
+BUNDLED WITH
+   1.10.6
