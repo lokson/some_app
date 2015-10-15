@@ -2,7 +2,7 @@ require_relative 'test_helper'
 
 class TestApp < Minitest::Test
   def setup
-    @app = App.new
+    @app = App.instance
   end
 
   def test_overall
