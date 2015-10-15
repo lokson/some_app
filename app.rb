@@ -1,11 +1,9 @@
 require_relative 'command'
 require_relative 'robot'
-require 'singleton'
 
 # Application class
 # Context, Parser and Tabletop responsibilities
 class App
-  include Singleton
   attr_accessor :robot
 
   # register all commands here
@@ -18,14 +16,14 @@ class App
 
   def exec(input)
     @buffer << input
-    output  = ''
+    output  = []
     # gradually eat buffer by regexp
     while(match = next_match()) do
       @buffer = match.post_match
       command = make_command(match)
-      output << command.run().to_s
+      output << command.run()
     end
-    output
+    output.compact.join("\n")
   end
 
   # handle wrong input, match what's possible
@@ -39,7 +37,7 @@ class App
     string = arg.to_s
     COMMAND_CLASSESS.each do |klass|
       match = /#{klass.pattern}/.match(string)
-      return klass.new(match.captures) if match
+      return klass.new(match.captures,self) if match
     end
   end
 
@@ -49,5 +47,3 @@ class App
   end
 end
 
-class OutOfTable < StandardError
-end

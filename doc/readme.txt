@@ -12,3 +12,8 @@ Within simple Object design I wanted that it would be easy to add:
 - Undo/redo command
   Command design pattern was used.
   Command instances could be easily stored in history list.
+
+- Choose file or console for input and output
+  Aplication class works on strings, not streams.
+  Currently one command line client is provided.
+  Writing another client with different streams would be easy.

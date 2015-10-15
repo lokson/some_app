@@ -1,7 +1,7 @@
 class Command
-  def initialize(args)
+  def initialize(args,app)
     @args = args
-    @app = App.instance
+    @app = app
   end
 end
 
@@ -15,9 +15,9 @@ class Place < Command
   end
 
   def run
-    location = { x: @args[0].to_i, y: @args[1].to_i, direction: @args[2] }
+    location = { x: @args[0].to_i, y: @args[1].to_i }
     if @app.on_tabletop?(location)
-      @app.robot = Robot.new(location)
+      @app.robot = Robot.new(location, @args[2], @app)
     end
     nil
   end
