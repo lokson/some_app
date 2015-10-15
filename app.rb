@@ -1,5 +1,5 @@
-require_relative 'command'
-require_relative 'robot'
+require File.expand_path('command', File.dirname(__FILE__))
+require File.expand_path('robot', File.dirname(__FILE__))
 
 # Application class
 # Context, Parser and Tabletop responsibilities

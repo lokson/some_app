@@ -1,3 +1,2 @@
 require 'minitest/autorun'
-require 'byebug'
-require '../app.rb'
+require File.expand_path('../app.rb', File.dirname(__FILE__))

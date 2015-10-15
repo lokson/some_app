@@ -1,4 +1,4 @@
-require_relative 'app'
+require File.expand_path('app', File.dirname(__FILE__))
 
 app = App.new()
 puts 'the Toy Robot console'
