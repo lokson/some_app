@@ -14,14 +14,14 @@ Due to design, functionality could be easy expanded with:
 
 ### More than one robot on tabletop
 - Robot has a Class representation
-- Each robot instance knows its position and is able to act on tabletop.
-- Command syntax (MOVE etc.) would need to be changed to select robot to act.
+- Each robot instance is aware of it's position.
+- Command syntax (MOVE etc.) would need to be changed to select which robot has to act.
 
 ### Undo/redo command
 - Command design pattern was used.
 - Command instances could be easily stored in list as history.
 - Undo/redo would require pointer to current position in that history
-- Undo/redo would be implemented as sibiling method to run.
+- Undo/redo would be implemented as sibiling of `run` method.
 
 ### Choose file or console for input and output
 - Aplication class works on strings, not streams.
