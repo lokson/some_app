@@ -10,7 +10,7 @@ To run tests:
 ## Notes on design
 App tries to make sense out of wrong syntax as much as possible. `PLACE 0,0,NORTH WRONG-STRING MOVE` will be interpreted as `PLACE` and `MOVE` with WRONG-STRING part ignored.
 
-Due to design, functionality could be easy expanded with:
+Object design of this app has potential to be easily expanded with:
 
 ### More than one robot on tabletop
 - Robot has a Class representation
